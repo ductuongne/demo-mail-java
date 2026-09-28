@@ -14,4 +14,4 @@ COPY --from=build /app/target/demo2-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/R
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "sed -i \"s/port=\\\"8080\\\"/port=\\\"${PORT:-8080}\\\"/\" /usr/local/tomcat/conf/server.xml && catalina.sh run"]
+CMD ["sh", "-c", "sed -i -e 's/port=\"8005\"/port=\"-1\"/' -e \"s/port=\\\"8080\\\"/port=\\\"${PORT:-8080}\\\"/\" /usr/local/tomcat/conf/server.xml && catalina.sh run"]
