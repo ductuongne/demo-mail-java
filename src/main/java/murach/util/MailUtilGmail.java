@@ -6,8 +6,8 @@ import jakarta.mail.internet.*;
 
 public class MailUtilGmail {
 
-    private static final String SMTP_USERNAME = "tuongnoob432@gmail.com";
-    private static final String SMTP_PASSWORD = "ftgy inhx bujr yvgw";
+    private static final String SMTP_USERNAME = System.getenv("MAIL_USERNAME");
+    private static final String SMTP_PASSWORD = System.getenv("MAIL_APP_PASSWORD");
 
     public static void sendMail(String to, String from,
                                 String subject, String body, boolean bodyIsHTML)
